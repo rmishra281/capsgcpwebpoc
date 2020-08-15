@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: capsgcpwebpoc
+spec:
+  selector:
+    matchLabels:
+      app: capsgcpwebpoc
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: capsgcpwebpoc
+    spec:
+      containers:
+        - name: capsgcpwebpoc
+          image: IMAGE
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: kaniko-secret
+              mountPath: /tmp/test
+          env:
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: /tmp/test/kaniko-secret.json
+      volumes:
+        - name: kaniko-secret
+          secret:
+              secretName: capsgcpwebpoc
+              defaultMode: 0666
+      
