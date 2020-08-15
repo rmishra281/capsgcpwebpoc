@@ -29,7 +29,7 @@ public class PreferenceController {
 	}
 
 	
-	@GetMapping("/pref")
+	@GetMapping("/prefv281")
 	public String getPref(Model model) {
 		model.addAttribute("preferencespec", new PreferenceSpec());
 		return "index";
