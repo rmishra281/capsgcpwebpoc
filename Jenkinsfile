@@ -19,7 +19,7 @@ pipeline {
     environment {
         PROJECT_ZONE = "${JENK_INT_IT_ZONE}"
         PROJECT_ID = "${JENK_INT_IT_PROJECT_ID}"
-        STAGING_CLUSTER = "${JENK_INT_IT_STAGING}"
+        STAGING_CLUSTER = "prod"
         PROD_CLUSTER = "${JENK_INT_IT_PROD}"
         BUILD_CONTEXT_BUCKET = "${JENK_INT_IT_BUCKET}"
         BUILD_CONTEXT = "build-context-${BUILD_ID}.tar.gz"
