@@ -19,13 +19,13 @@ spec:
             - containerPort: 80
           volumeMounts:
             - name: kaniko-secret
-              mountPath: /tmp/test
+              mountPath: /tmp/test2
           env:
             - name: GOOGLE_APPLICATION_CREDENTIALS
-              value: /tmp/test/kaniko-secret.json
+              value: /tmp/test2/kaniko-secret.json
       volumes:
         - name: kaniko-secret
           secret:
-              secretName: capsgcp
+              secretName: capsgcp2
               defaultMode: 0666
       
