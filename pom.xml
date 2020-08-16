@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.test.externalsvc</groupId>
-	<artifactId>capsgcpwebpoc</artifactId>
+	<artifactId>capsgcp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>capsgcpwebpoc</name>
 	<description>capsgcpwebpoc project for Spring Boot</description>
