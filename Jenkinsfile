@@ -23,8 +23,8 @@ pipeline {
         PROD_CLUSTER = "${JENK_INT_IT_PROD}"
         BUILD_CONTEXT_BUCKET = "${JENK_INT_IT_BUCKET}"
         BUILD_CONTEXT = "build-context-${BUILD_ID}.tar.gz"
-        APP_NAME = "capsgcpwebpoc"
-        GCR_IMAGE = "gcr.io/capsgcppoc/capsgcpwebpoc:${BUILD_ID}"
+        APP_NAME = "capsgcp"
+        GCR_IMAGE = "gcr.io/capsgcp/capsgcp:${BUILD_ID}"
         APP_JAR = "${APP_NAME}.jar"
     }
 
@@ -87,7 +87,7 @@ pipeline {
 	    steps{
 		container('gke-deploy') {
 		    sh "sed -i s#IMAGE#${GCR_IMAGE}#g kubernetes/manifest.yaml"
-                    step([$class: 'KubernetesEngineBuilder', projectId: "capsgcppoc", clusterName: env.STAGING_CLUSTER, location: env.PROJECT_ZONE, manifestPattern: 'kubernetes/manifest.yaml', credentialsId: "capsgcppoc", verifyDeployments: true])
+                    step([$class: 'KubernetesEngineBuilder', projectId: "capsgcp", clusterName: env.STAGING_CLUSTER, location: env.PROJECT_ZONE, manifestPattern: 'kubernetes/manifest.yaml', credentialsId: "capsgcp", verifyDeployments: true])
 		}
             }
 	}

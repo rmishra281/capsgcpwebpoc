@@ -19,7 +19,7 @@ public class PreferenceController {
 	@PostMapping("/prefsubmit")
 	public String getPref(@ModelAttribute PreferenceSpec preferencespec, Model model) {
 		System.out.println(preferencespec.getPrefkey());
-		String url="http://34.74.60.121:8085/pref/"+preferencespec.getPrefkey();
+		String url="http://35.196.239.217/pref/"+preferencespec.getPrefkey();
 		System.out.println(url);
 		PreferenceSpec obj= restclient.getForObject(url, PreferenceSpec.class);
 		System.out.println(obj);

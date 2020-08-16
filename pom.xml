@@ -11,7 +11,7 @@
 	<groupId>com.test.externalsvc</groupId>
 	<artifactId>capsgcp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>capsgcpwebpoc</name>
+	<name>capsgcp</name>
 	<description>capsgcpwebpoc project for Spring Boot</description>
 
 	<properties>

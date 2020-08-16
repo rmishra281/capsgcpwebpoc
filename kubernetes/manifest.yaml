@@ -26,6 +26,6 @@ spec:
       volumes:
         - name: kaniko-secret
           secret:
-              secretName: capsgcppoc
+              secretName: capsgcp
               defaultMode: 0666
       
