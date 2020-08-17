@@ -4,14 +4,15 @@
     <title>Getting Started: Handling Form Submission</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
-<body>
-<central><h1>
-	<h1>Form :
-    <form action="#" th:action="@{/prefsubmit}" th:object="${preferencespec}" method="post">
-    	<p>prefkey: <input type="text" th:field="*{prefkey}" /></p>
-        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+<body style="background-color:grey;">
+<h1>
+	<center> Serach CAPS Key :<br>
+    <form action="#" th:action="@{/getpref}" th:object="${preferencespec}" method="post">
+    	<p>key: <input type="text" th:field="*{prefkey}" /></p>
+        <p><input type="submit" value="search" /> 
     </form>
+     </center>
     </h1>
-    </central>
+   
 </body>
 </html>

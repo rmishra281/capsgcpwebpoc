@@ -16,7 +16,7 @@ public class PreferenceController {
 	
 	RestTemplate restclient = new RestTemplate();
 	
-	@PostMapping("/prefsubmit")
+	@PostMapping("/getpref")
 	public String getPref(@ModelAttribute PreferenceSpec preferencespec, Model model) {
 		System.out.println(preferencespec.getPrefkey());
 		String url="http://35.196.239.217/pref/"+preferencespec.getPrefkey();
@@ -24,14 +24,36 @@ public class PreferenceController {
 		PreferenceSpec obj= restclient.getForObject(url, PreferenceSpec.class);
 		System.out.println(obj);
 		model.addAttribute("pref", obj);
+		model.addAttribute("key", obj.getPrefkey());
 		model.addAttribute("value", obj.getPrefvalue());
+		model.addAttribute("desc", obj.getDescdetails());
 		return "result";
 	}
 
 	
-	@GetMapping("/prefv281")
+	@GetMapping("/prefview")
 	public String getPref(Model model) {
 		model.addAttribute("preferencespec", new PreferenceSpec());
 		return "index";
 	}
+	@GetMapping("/createview")
+	public String createPref(Model model) {
+		model.addAttribute("preferencespecrequest", new PreferenceSpecRequest());
+		return "create";
+	}
+	
+	
+	@PostMapping("/createpref")
+	public String createPref(@ModelAttribute PreferenceSpecRequest preferenceSpecRequest, Model model) {
+		System.out.println(preferenceSpecRequest.getKey());
+		String url="http://35.196.239.217/pref";
+		PreferenceSpec obj = restclient.postForObject(url, preferenceSpecRequest, PreferenceSpec.class);
+		System.out.println(url);
+		model.addAttribute("pref", obj);
+		model.addAttribute("key", obj.getPrefkey());
+		model.addAttribute("value", obj.getPrefvalue());
+		model.addAttribute("desc", obj.getDescdetails());
+		return "result";
+	}
+
 }

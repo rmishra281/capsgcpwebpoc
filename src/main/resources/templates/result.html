@@ -4,7 +4,16 @@
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
-<body>
-  <h1> <p th:text="'Hello, ' + ${value} + '!'" /></h1> 
+<body style="background-color:grey;">
+<center>
+<h1>Result</h1>
+  <h1> <p th:text="'key:' + ${key} + ''" /></h1> 
+   <h1> <p th:text="'value:' + ${value} + ''" /></h1> 
+    <h1> <p th:text="'desc:' + ${desc} + ''" /></h1>
+    <br><br>
+    <a href="/prefview">Search</a><br>
+     <a href="/createview">Create</a><br>
+      </center>
+    
 </body>
 </html>

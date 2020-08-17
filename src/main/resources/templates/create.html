@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body style="background-color:grey;">
+<center>
+<h1>
+Create CAPS Key :
+    <form action="#" th:action="@{/createpref}" th:object="${preferencespecrequest}" method="post">
+    	<p>key: <input type="text" th:field="*{key}" /></p>
+    	<p>value: <input type="text" th:field="*{value}" /></p>
+    	<p>desc: <input type="text" th:field="*{desc}" /></p>
+        <p><input type="submit" value="create" /> 
+    </form>
+  
+    </h1>
+      </center>
+   
+</body>
+</html>
