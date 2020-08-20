@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Controller
 public class PreferenceController {
-	public static final Sting URL="http://35.196.239.217/pref/";
+	public static final String URL="http://35.196.239.217/pref/";
 	
 	RestTemplate restclient = new RestTemplate();
 	
