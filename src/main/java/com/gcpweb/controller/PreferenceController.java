@@ -47,7 +47,7 @@ public class PreferenceController {
 	public String createPref(@ModelAttribute PreferenceSpecRequest preferenceSpecRequest, Model model) {
 		System.out.println(preferenceSpecRequest.getKey());
 		PreferenceSpec obj = restclient.postForObject(URL, preferenceSpecRequest, PreferenceSpec.class);
-		System.out.println(url);
+		System.out.println(URL);
 		model.addAttribute("pref", obj);
 		model.addAttribute("key", obj.getPrefkey());
 		model.addAttribute("value", obj.getPrefvalue());
