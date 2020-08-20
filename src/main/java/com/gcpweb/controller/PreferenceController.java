@@ -12,14 +12,14 @@ import org.springframework.web.client.RestTemplate;
 
 @Controller
 public class PreferenceController {
-	
+	public static final Sting URL="http://35.196.239.217/pref/";
 	
 	RestTemplate restclient = new RestTemplate();
 	
 	@PostMapping("/getpref")
 	public String getPref(@ModelAttribute PreferenceSpec preferencespec, Model model) {
 		System.out.println(preferencespec.getPrefkey());
-		String url="http://35.196.239.217/pref/"+preferencespec.getPrefkey();
+		String url=URL+preferencespec.getPrefkey();
 		System.out.println(url);
 		PreferenceSpec obj= restclient.getForObject(url, PreferenceSpec.class);
 		System.out.println(obj);
@@ -46,8 +46,7 @@ public class PreferenceController {
 	@PostMapping("/createpref")
 	public String createPref(@ModelAttribute PreferenceSpecRequest preferenceSpecRequest, Model model) {
 		System.out.println(preferenceSpecRequest.getKey());
-		String url="http://35.196.239.217/pref";
-		PreferenceSpec obj = restclient.postForObject(url, preferenceSpecRequest, PreferenceSpec.class);
+		PreferenceSpec obj = restclient.postForObject(URL, preferenceSpecRequest, PreferenceSpec.class);
 		System.out.println(url);
 		model.addAttribute("pref", obj);
 		model.addAttribute("key", obj.getPrefkey());
