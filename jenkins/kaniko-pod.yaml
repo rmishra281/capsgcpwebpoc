@@ -26,11 +26,11 @@ spec:
     tty: true
     volumeMounts:
       - name: kaniko-secret
-        mountPath: /tmp
+        mountPath: /tmp/test
     env:
       - name: GOOGLE_APPLICATION_CREDENTIALS
-        value: /tmp/kaniko-secret.json
+        value: /tmp/test/kaniko-secret.json
   volumes:
   - name: kaniko-secret
     secret:
-      secretName: capsgcp
+      secretName: capspoc-secret
