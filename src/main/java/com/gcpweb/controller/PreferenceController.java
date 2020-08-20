@@ -19,9 +19,9 @@ public class PreferenceController {
 	@PostMapping("/getpref")
 	public String getPref(@ModelAttribute PreferenceSpec preferencespec, Model model) {
 		System.out.println(preferencespec.getPrefkey());
-		String url=URL+preferencespec.getPrefkey();
-		System.out.println(url);
-		PreferenceSpec obj= restclient.getForObject(url, PreferenceSpec.class);
+		String url1=URL+preferencespec.getPrefkey();
+		System.out.println(url1);
+		PreferenceSpec obj= restclient.getForObject(url1, PreferenceSpec.class);
 		System.out.println(obj);
 		model.addAttribute("pref", obj);
 		model.addAttribute("key", obj.getPrefkey());
